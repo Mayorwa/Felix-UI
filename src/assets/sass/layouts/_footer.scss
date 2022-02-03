@@ -1,0 +1,28 @@
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: {
+        top: 20px;
+        bottom: 10px;
+    };
+    @include respond-to('mobile'){
+        padding: {
+            top: 20px;
+        };
+    }
+    &__logo{
+        height: fit-content;
+        font-weight: 600;
+        @include text-sm;
+        @include respond-to('mobile'){
+            @include text-xs;
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,94 @@
+@import "home";
+
+.page{
+    display: flex;
+    flex-wrap: wrap;
+    @include center;
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    }
+    margin-bottom: 32px;
+    @include respond-to('mobile'){
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        };
+    }
+    &__header{
+        margin: {
+            top: 10px;
+            bottom: 10px;
+        };
+    }
+    &__description{
+        @include text-xs;
+        @include respond-to('mobile'){
+            @include text-xxs;
+        }
+        margin: {
+            bottom: 10px;
+        };
+    }
+    &__grid{
+        &:first-child{
+            @include grid-desktop-l(8);
+        }
+        &:last-child{
+            @include grid-desktop-l(4);
+            @include respond-to('desktop-l'){
+                display: none;
+            }
+        }
+    }
+}
+.step{
+    margin: {
+        top: 50px;
+        bottom: 30px;
+    };
+    &__text{
+        margin-top: 5px;
+        @include text-xs;
+        &-lg{
+            @include h6;
+            @include respond-to('mobile'){
+                @include text-sm;
+            }
+        }
+    }
+    &__input {
+        margin-top: 20px;
+    }
+    &__fields{
+        margin-bottom: 20px;
+        &__label{
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .field{
+            margin-left: 20px;
+        }
+    }
+    &__btn{
+        --field-gap: 10px;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        .button{
+            flex: 0 0 calc(150px - var(--field-gap));
+            width: calc(150px - var(--field-gap));
+            &:first-child{
+                margin-right: 5px;
+            }
+            &:last-child{
+                margin-left: 5px;
+            }
+            @include respond-to('tablet') {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}
