@@ -1,0 +1,17 @@
+.progress{
+    width: 900px;
+    height: 15px;
+    background-color: $btn-secondary;
+    @include respond-to('tablet'){
+        width: 100%;
+    }
+    &--header{
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .bar{
+        height: 15px;
+        background-color: $text-secondary-2;
+    }
+}

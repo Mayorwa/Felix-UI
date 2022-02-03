@@ -1,0 +1,102 @@
+//$grid-max: 12;
+////sm
+//@include small-mobile{
+//    @for $i from 1 through $grid-max {
+//        $p: $grid-max / $i;
+//        @mixin grid-sm($i) {
+//            flex: 0 0 auto;
+//            width: #{100 / $p}#{'%'};
+//        }
+//        @mixin off-sm-#{$i} {
+//            flex: 0 0 auto;
+//            margin-left: #{100 / $p}#{'%'};
+//        }
+//    }
+//}
+//
+////md
+//@include mobile{
+//    @for $i from 1 through $grid-max {
+//        $p: $grid-max / $i;
+//        @mixin grid-md-#{$i} {
+//            flex: 0 0 auto;
+//            width: #{100 / $p}#{'%'};
+//        }
+//        @mixin off-md-#{$i} {
+//            flex: 0 0 auto;
+//            margin-left: #{100 / $p}#{'%'};
+//        }
+//    }
+//}
+//
+////lg
+//@include tablet{
+//    @for $i from 1 through $grid-max {
+//        $p: $grid-max / $i;
+//        @mixin grid-lg-#{$i} {
+//            flex: 0 0 auto;
+//            width: #{100 / $p}#{'%'};
+//        }
+//        @mixin off-lg-#{$i} {
+//            flex: 0 0 auto;
+//            margin-left: #{100 / $p}#{'%'};
+//        }
+//    }
+//}
+//
+////xl
+//@include desktop{
+//    @for $i from 1 through $grid-max {
+//        $p: $grid-max / $i;
+//        @mixin grid-xl-#{$i} {
+//            flex: 0 0 auto;
+//            width: #{100 / $p}#{'%'};
+//        }
+//        @mixin off-xl-#{$i} {
+//            flex: 0 0 auto;
+//            margin-left: #{100 / $p}#{'%'};
+//        }
+//    }
+//}
+//
+////xxl
+//@include desktop-xl{
+//    @for $i from 1 through $grid-max {
+//        $p: $grid-max / $i;
+//        @mixin grid-xxl-#{$i} {
+//            flex: 0 0 auto;
+//            width: #{100 / $p}#{'%'};
+//        }
+//        @mixin off-xxl-#{$i} {
+//            flex: 0 0 auto;
+//            margin-left: #{100 / $p}#{'%'};
+//        }
+//    }
+//}
+//@mixin flex{
+//    display: flex;
+//    flex-wrap: wrap;
+//}
+//
+@mixin grid-col($i) {
+    flex: 0 0 auto;
+    width: #{100 / (12 / $i)}#{'%'};
+}
+
+@mixin grid-desktop-l($i) {
+    flex: 0 0 auto;
+    width: 100%;
+    @include respond-from('desktop-l'){
+        width: #{100 / (12 / $i)}#{'%'};
+    }
+}
+@mixin center {
+    width: 100%;
+    max-width: 1580px;
+    margin: 0 auto;
+    padding: 0 32px;
+    @include respond-to('mobile') {
+        padding: 0 15px;
+    }
+}
+//
